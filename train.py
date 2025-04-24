@@ -10,7 +10,7 @@
 #
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 import torch
 from random import randint
 # cq:import corners_loss
@@ -32,7 +32,6 @@ try:
 except ImportError:
     TENSORBOARD_FOUND = False
 
-#os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 def training(dataset, opt, pipe, testing_iterations, saving_iterations):
     tb_writer = prepare_output_and_logger(dataset)
     gaussians = GaussianModel(dataset.sh_degree)
